@@ -213,7 +213,7 @@ def free_mb():
 
 
 def tree_rss(pid):
-    """(linux) The resident bytes of a process and the processes it started (a driver that runs its compiler as a child, or ccache)"""
+    """(linux) The resident bytes of a process and the processes it started (a driver that runs its compiler as a child, or cache)"""
     with open("/proc/%d/statm" % pid) as f:
         n = int(f.read().split()[1]) * os.sysconf("SC_PAGE_SIZE")
     for task in os.listdir("/proc/%d/task" % pid):
